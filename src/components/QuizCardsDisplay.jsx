@@ -19,9 +19,10 @@ const QuizCardsDisplay = ({ cards }) => {
     }
   };
   const handleClickRestart = () => {
-    if (cardIndex > 0) {
-      setCardIndex(cardIndex - 1);
-    }
+    dispatch({
+      type: "RESET_QUIZ",
+      payload: false,
+    });
   };
   return (
     <div className="quiz-form-container cards-display">
@@ -37,7 +38,7 @@ const QuizCardsDisplay = ({ cards }) => {
           >
             Next
           </button>
-          <button onClick={handleClickRestart}>Done</button>
+          <button onClick={handleClickRestart}>Create New Quiz</button>
         </div>
         <QuizInfo length={cards.length} />
       </div>

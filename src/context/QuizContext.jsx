@@ -12,6 +12,14 @@ export const quizReducer = (state, action) => {
       return { ...state, quizCategory: action.payload };
     case "SET_QUIZ_SIZE":
       return { ...state, quizSize: action.payload };
+    case "RESET_QUIZ":
+      return {
+        cardSet: {},
+        quizActive: false,
+        quizScore: 0,
+        quizCategory: "",
+        quizSize: 5,
+      };
     default:
       return state;
   }
