@@ -1,16 +1,11 @@
 import { useState, useContext } from "react";
 import { QuizContext } from "./context/QuizContext";
-
-import {
-  generateIconsSet,
-  generateFirstsSet,
-  generateQuotesSet,
-  generateMiscSet,
-} from "./utilities/generateCardSet";
+import QuizForm from "./components/QuizForm";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  const { quizActive } = useContext(QuizContext);
+  return <div className="App">{!quizActive && <QuizForm />}</div>;
 }
 
 export default App;
