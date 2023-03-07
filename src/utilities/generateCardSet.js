@@ -16,19 +16,26 @@ const generateRandomSet = (source, size) => {
   }
   return miscSet;
 };
-export const getMiscSet = (size) => {
+const generateMiscSet = (size) => {
   let allCards = [...cardPool.icons, ...cardPool.firsts, ...cardPool.quotes];
   return generateRandomSet(allCards, size);
 };
 
-export const getIconsSet = (size) => {
+const generateIconsSet = (size) => {
   return generateRandomSet(cardPool.icons, size);
 };
 
-export const getFirstsSet = (size) => {
+const generateFirstsSet = (size) => {
   return generateRandomSet(cardPool.firsts, size);
 };
 
-export const getQuotesSet = (size) => {
+const generateQuotesSet = (size) => {
   return generateRandomSet(cardPool.quotes, size);
+};
+
+export {
+  generateFirstsSet,
+  generateIconsSet,
+  generateMiscSet,
+  generateQuotesSet,
 };
