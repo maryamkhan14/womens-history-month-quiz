@@ -1,4 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { QuizContext } from "./context/QuizContext";
+
+import {
+  generateIconsSet,
+  generateFirstsSet,
+  generateQuotesSet,
+  generateMiscSet,
+} from "./utilities/generateCardSet";
 import "./App.css";
 
 function App() {
