@@ -5,9 +5,13 @@ export const quizReducer = (state, action) => {
     case "SWITCH_QUIZ_ACTIVE":
       return { ...state, quizActive: action.payload };
     case "SET_QUIZ_SCORE":
-      return { ...state, cardScore: action.payload };
+      return { ...state, quizScore: action.payload };
     case "SET_CARD_SET":
       return { ...state, cardSet: action.payload };
+    case "SET_QUIZ_CATEGORY":
+      return { ...state, quizCategory: action.payload };
+    case "SET_QUIZ_SIZE":
+      return { ...state, quizSize: action.payload };
     default:
       return state;
   }
@@ -18,6 +22,8 @@ export const QuizContextProvider = ({ children }) => {
     cardSet: {},
     quizActive: false,
     quizScore: 0,
+    quizCategory: "",
+    quizSize: 5,
   });
   return (
     <QuizContext.Provider value={{ ...state, dispatch }}>
