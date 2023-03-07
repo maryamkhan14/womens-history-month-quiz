@@ -8,6 +8,8 @@
   justify-content: center;
   align-items: center;
   flex: 1 1 100%;
+  min-width: 0;
+  min-height: 0;
 }
 .quiz-form-container {
   display: flex;
@@ -15,8 +17,11 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  width: 75%;
-  height: 75%;
+  width: 75vw;
+  height: 75vh;
+
+  min-width: 0;
+  min-height: 0;
   border: 1px solid black;
 }
 
@@ -31,20 +36,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 100%;
 }
 .selects p {
   font-weight: 500;
 }
 .category-select {
+  display: flex;
+  align-items: center;
   margin-bottom: 25px;
   align-items: center;
 }
 
 .category-select select {
+  max-width: 80%;
   margin-left: 25px;
 }
 
 .size-input {
+  display: flex;
+  align-items: center;
   flex: 1 1 80%;
   margin-bottom: 25px;
 }
@@ -52,4 +63,12 @@
 .size-input input {
   margin-left: 25px;
   max-height: 1em;
+}
+
+.cards-display {
+  justify-content: space-between;
+}
+
+.buttons button {
+  margin: 0.3rem;
 }

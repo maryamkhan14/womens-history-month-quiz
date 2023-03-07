@@ -1,6 +1,7 @@
 import React from "react";
 
 const QuizCard = ({ card }) => {
+  console.log("render");
   return (
     <div>
       <div className="intro">
