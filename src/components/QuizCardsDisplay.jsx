@@ -4,7 +4,6 @@ import QuizCard from "./QuizCard";
 import { QuizContext } from "../context/QuizContext";
 import QuizInfo from "./QuizInfo";
 const QuizCardsDisplay = ({ cards }) => {
-  console.log("render");
   const { dispatch } = useContext(QuizContext);
   const [cardIndex, setCardIndex] = useState(0);
 
