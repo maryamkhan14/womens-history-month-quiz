@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: center;
   flex: 1 1 100%;
-  border: 10px solid black;
 }
 .quiz-form-container {
   display: flex;
@@ -18,7 +17,7 @@
   padding: 1rem;
   min-width: 75%;
   min-height: 75%;
-  border: 5px solid red;
+  border: 1px solid black;
 }
 
 .intro {
@@ -37,8 +36,6 @@
   font-weight: 500;
 }
 .category-select {
-  display: flex;
-  flex: 1 1 80%;
   margin-bottom: 25px;
   align-items: center;
 }
@@ -48,10 +45,11 @@
 }
 
 .size-input {
-  display: flex;
   flex: 1 1 80%;
+  margin-bottom: 25px;
 }
 
 .size-input input {
   margin-left: 25px;
+  max-height: 1em;
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useContext } from "react";
+import { QuizContext } from "../context/QuizContext";
 import {
   generateIconsSet,
   generateFirstsSet,
@@ -7,7 +9,43 @@ import {
 } from "../utilities/generateCardSet";
 import QuizCategorySelector from "./QuizCategorySelector";
 import QuizSizeInput from "./QuizSizeInput";
+
 const QuizForm = () => {
+  const { quizCategory, quizSize, dispatch } = useContext(QuizContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    switch (quizCategory) {
+      case "misc":
+        dispatch({
+          type: "SET_CARD_SET",
+          payload: generateMiscSet(quizSize),
+        });
+      case "firsts":
+        dispatch({
+          type: "SET_CARD_SET",
+          payload: generateFirstsSet(quizSize),
+        });
+      case "icons":
+        dispatch({
+          type: "SET_CARD_SET",
+          payload: generateIconsSet(quizSize),
+        });
+      case "quotes":
+        dispatch({
+          type: "SET_CARD_SET",
+          payload: generateQuotesSet(quizSize),
+        });
+      default:
+        dispatch({
+          type: "SET_CARD_SET",
+          payload: generateFirstsSet(quizSize),
+        });
+    }
+    dispatch({
+      type: "SWITCH_QUIZ_ACTIVE",
+      payload: true,
+    });
+  };
   return (
     <form id="quiz-form" className="quiz-form-container">
       <div className="intro">
@@ -21,6 +59,9 @@ const QuizForm = () => {
         <QuizCategorySelector />
         <QuizSizeInput />
       </div>
+      <button type="submit" onClick={(e) => handleSubmit(e)}>
+        Let's go!
+      </button>
     </form>
   );
 };

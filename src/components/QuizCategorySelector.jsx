@@ -1,10 +1,23 @@
 import React from "react";
+import { useContext } from "react";
+import { QuizContext } from "../context/QuizContext";
 
 const QuizCategorySelector = () => {
+  const { dispatch } = useContext(QuizContext);
+  const handleSelectChange = (e) => {
+    dispatch({
+      type: "SET_QUIZ_CATEGORY",
+      payload: e.target.value,
+    });
+  };
   return (
     <div className="category-select">
       <p>Select a category.</p>
-      <select name="category" id="category" className="category-select">
+      <select
+        name="category"
+        id="category"
+        onChange={(e) => handleSelectChange(e)}
+      >
         <option value="firsts">
           Recognize the trailblazer. This category is about women who were the
           first to do something important, such as going to space.
