@@ -2,26 +2,19 @@ import { createContext, useReducer } from "react";
 export const QuizCompletionContext = createContext();
 export const quizCompletionReducer = (state, action) => {
   switch (action.type) {
-    case "SWITCH_QUIZ_ACTIVE":
-      return { ...state, quizActive: action.payload };
-    case "SET_ANSWERED_CORRECTLY":
-      return { ...state, answeredCorrectly: action.payload };
+    case "SET_CORRECT_ANSWER_COUNT":
+      return { ...state, correctAnswerCount: action.payload };
     case "SET_QUIZ_SCORE":
       return { ...state, quizScore: action.payload };
-    case "SET_CARD_SET":
-      return { ...state, cardSet: action.payload };
-    case "SET_QUIZ_CATEGORY":
-      return { ...state, quizCategory: action.payload };
-    case "SET_QUIZ_SIZE":
-      return { ...state, quizSize: action.payload };
-    case "RESET_QUIZ":
+    case "RESET_QUIZ_SCORE":
       return {
-        cardSet: {},
-        quizActive: false,
+        correctAnswerCount: 0,
         quizScore: 0,
-        quizCategory: "",
-        quizSize: 5,
+        allAnswered: {},
       };
+    case "UPDATE_ALL_ANSWERED":
+      state.allAnswered[action.payload.id] = action.payload.result;
+      return { ...state, allAnswered: state.allAnswered };
     default:
       return state;
   }
@@ -29,12 +22,9 @@ export const quizCompletionReducer = (state, action) => {
 
 export const QuizCompletionContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(quizCompletionReducer, {
-    cardSet: {},
-    quizActive: false,
-    answeredCorrectly: 0,
+    correctAnswerCount: 0,
     quizScore: 0,
-    quizCategory: "",
-    quizSize: 5,
+    allAnswered: {},
   });
   return (
     <QuizCompletionContext.Provider value={{ ...state, dispatch }}>

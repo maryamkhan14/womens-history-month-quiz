@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { QuizCompletionContextProvider } from "./context/QuizCompletionContext";
+import { QuizContextProvider } from "./context/QuizContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QuizCompletionContextProvider>
+    <QuizContextProvider>
       <App />
-    </QuizCompletionContextProvider>
+    </QuizContextProvider>
   </React.StrictMode>
 );

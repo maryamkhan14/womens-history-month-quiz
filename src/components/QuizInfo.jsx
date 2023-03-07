@@ -1,9 +1,13 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
+import { QuizContext } from "../context/QuizContext";
 const QuizInfo = () => {
-  const { quizScore, quizCategory } = useContext(QuizCompletionContext);
+  const { cardSet } = useContext(QuizContext);
+  const { category: quizCategory } = cardSet;
   const [displayCategory, setDisplayCategory] = useState("");
+
+  const { quizScore } = useContext(QuizCompletionContext);
 
   const setCategory = () => {
     switch (quizCategory) {

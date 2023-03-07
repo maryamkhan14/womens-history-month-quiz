@@ -1,6 +1,10 @@
 import React from "react";
 import { useEffect, useContext } from "react";
-import { QuizCompletionContext } from "../context/QuizCompletionContext";
+import { QuizContext } from "../context/QuizContext";
+import {
+  QuizCreationContext,
+  QuizCreationContextProvider,
+} from "../context/QuizCreationContext";
 import {
   generateIconsSet,
   generateFirstsSet,
@@ -11,10 +15,10 @@ import QuizCategorySelector from "./QuizCategorySelector";
 import QuizSizeInput from "./QuizSizeInput";
 
 const QuizForm = () => {
-  const { quizCategory, quizSize, dispatch } = useContext(
-    QuizCompletionContext
-  );
+  const { dispatch } = useContext(QuizContext);
+  const { quizCategory, quizSize } = useContext(QuizCreationContext);
   const handleSubmit = (e) => {
+    console.log(quizCategory);
     e.preventDefault();
     switch (quizCategory) {
       case "misc":
@@ -42,10 +46,6 @@ const QuizForm = () => {
         });
         break;
       default:
-        dispatch({
-          type: "SET_QUIZ_CATEGORY",
-          payload: "firsts",
-        });
         dispatch({
           type: "SET_CARD_SET",
           payload: generateFirstsSet(quizSize),

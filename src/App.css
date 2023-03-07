@@ -10,6 +10,7 @@
   align-items: center;
   flex: 1 1 100%;
 }
+
 .quiz-form-container {
   display: flex;
   flex-direction: column;
@@ -31,7 +32,7 @@
   max-width: 100%;
   margin: 10px;
 }
-
+/** TODO: Add flex-wrap **/
 .selects {
   display: flex;
   flex-direction: column;
@@ -110,4 +111,8 @@
 
 .question-card {
   justify-content: space-between;
+}
+
+.answered > .card-options {
+  color: #e0e0e0;
 }

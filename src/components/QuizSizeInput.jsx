@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
-import { QuizCompletionContext } from "../context/QuizCompletionContext";
+import { QuizCreationContext } from "../context/QuizCreationContext";
 
 const QuizSizeInput = () => {
-  const { dispatch } = useContext(QuizCompletionContext);
+  const { dispatch } = useContext(QuizCreationContext);
   const handleSizeChange = (e) => {
     dispatch({
       type: "SET_QUIZ_SIZE",

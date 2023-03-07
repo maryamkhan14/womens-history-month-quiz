@@ -1,23 +1,40 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
 
 const QuizCard = ({ card }) => {
-  const { answeredCorrectly, dispatch } = useContext(QuizCompletionContext);
-  const [answered, setAnswered] = useState(false);
-  const [result, setResult] = useState();
+  const { allAnswered, correctAnswerCount, dispatch } = useContext(
+    QuizCompletionContext
+  );
+
+  // tells whether current question has been answered already
+  const answered = Object.keys(allAnswered).includes(card.id);
+  // captures result entered by user
+  const [result, setResult] = useState(null);
+
   const handleSelect = (id) => {
-    setAnswered(true);
     if (id == card.correctOption.id) {
       setResult(true);
-      dispatch({
-        type: "SET_ANSWERED_CORRECTLY",
-        payload: answeredCorrectly + 1,
-      });
+    } else {
+      setResult(false);
     }
   };
+
+  useEffect(() => {
+    result != null &&
+      dispatch({
+        type: "UPDATE_ALL_ANSWERED",
+        payload: { id: card.id, result: result },
+      });
+    result == true &&
+      dispatch({
+        type: "SET_CORRECT_ANSWER_COUNT",
+        payload: correctAnswerCount + 1,
+      });
+  }, [result]);
+
   return (
-    <div className="question-card">
+    <div className={`question-card ${answered && "answered"}`}>
       <h1>{card.header}</h1>
       <form className="card-options">
         {card.options.map((option) => (
@@ -34,15 +51,15 @@ const QuizCard = ({ card }) => {
           </div>
         ))}
       </form>
-      {result == true && (
-        <p className="result-correct">Good job! Your answer was correct.</p>
+      {allAnswered[card.id] == true && (
+        <p className="result-correct">
+          Good job! Your answer, {card.correctOption.text}, was correct.
+        </p>
       )}
-      {!result && answered && (
+      {allAnswered[card.id] == false && (
         <p className="result-incorrect">
-          <b>
-            Sorry, your answer was incorrect. The correct answer is "
-            {card.correctOption.text}".
-          </b>
+          Sorry, your answer was incorrect. The correct answer is "
+          {card.correctOption.text}".
         </p>
       )}
     </div>

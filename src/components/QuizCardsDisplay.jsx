@@ -3,9 +3,12 @@ import { useEffect, useState, useContext } from "react";
 import QuizCard from "./QuizCard";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
 import QuizInfo from "./QuizInfo";
+import { QuizContext } from "../context/QuizContext";
 const QuizCardsDisplay = ({ cards }) => {
-  const { answeredCorrectly, dispatch } = useContext(QuizCompletionContext);
-  const [score, setScore] = useState(0);
+  const { dispatch: quizDispatch } = useContext(QuizContext);
+  const { correctAnswerCount, dispatch: quizCompletionDispatch } = useContext(
+    QuizCompletionContext
+  );
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickPrevious = () => {
@@ -19,18 +22,18 @@ const QuizCardsDisplay = ({ cards }) => {
     }
   };
   const handleClickRestart = () => {
-    dispatch({
+    quizDispatch({ type: "RESET_QUIZ_SCORE", payload: null });
+    quizCompletionDispatch({
       type: "RESET_QUIZ",
-      payload: false,
+      payload: null,
     });
   };
   useEffect(() => {
-    console.log("changed");
-    dispatch({
+    quizCompletionDispatch({
       type: "SET_QUIZ_SCORE",
-      payload: Math.round((answeredCorrectly / cards.length) * 100),
+      payload: Math.round((correctAnswerCount / cards.length) * 100),
     });
-  }, [answeredCorrectly]);
+  }, [correctAnswerCount]);
   return (
     <div className="quiz-form-container cards-display">
       <QuizInfo />

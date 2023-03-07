@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
-import { QuizCompletionContext } from "../context/QuizCompletionContext";
+import { QuizCreationContext } from "../context/QuizCreationContext";
 
 const QuizCategorySelector = () => {
-  const { dispatch } = useContext(QuizCompletionContext);
+  const { dispatch } = useContext(QuizCreationContext);
   const handleSelectChange = (e) => {
     dispatch({
       type: "SET_QUIZ_CATEGORY",
