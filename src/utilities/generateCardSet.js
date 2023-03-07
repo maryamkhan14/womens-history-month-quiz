@@ -5,7 +5,6 @@ const generateRandomSet = (source, size) => {
   for (let i = 0; i < size; i++) {
     // generate random value
     let index = Math.floor(Math.random() * source.length);
-
     // ensure it's unique
     while (previouslyUsed.includes(index)) {
       index = Math.floor(Math.random() * source.length);
@@ -13,6 +12,7 @@ const generateRandomSet = (source, size) => {
 
     // append random, unique card to miscSet
     miscSet.cards.push(source[index]);
+    previouslyUsed.push(index);
   }
   return miscSet;
 };
