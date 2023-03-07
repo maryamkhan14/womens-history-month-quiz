@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { QuizContext } from "../context/QuizContext";
-const QuizInfo = ({ length }) => {
-  const { quizCategory } = useContext(QuizContext);
+const QuizInfo = () => {
+  const { quizScore, quizCategory } = useContext(QuizContext);
   const [displayCategory, setDisplayCategory] = useState("");
 
   const setCategory = () => {
@@ -28,7 +28,7 @@ const QuizInfo = ({ length }) => {
   return (
     <div className="quiz-info">
       <p>Category: {displayCategory}</p>
-      <p>Length: {length}</p>
+      <p>Score: {quizScore}%</p>
     </div>
   );
 };

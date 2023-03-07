@@ -5,9 +5,11 @@ import { QuizContext } from "../context/QuizContext";
 const QuizCard = ({ card }) => {
   const { answeredCorrectly, dispatch } = useContext(QuizContext);
   const [answered, setAnswered] = useState(false);
+  const [result, setResult] = useState();
   const handleSelect = (id) => {
     setAnswered(true);
     if (id == card.correctOption.id) {
+      setResult(true);
       dispatch({
         type: "SET_ANSWERED_CORRECTLY",
         payload: answeredCorrectly + 1,
@@ -33,6 +35,16 @@ const QuizCard = ({ card }) => {
             </div>
           ))}
         </form>
+        {result == true && (
+          <p>
+            <b>Good job! Your answer was correct.</b>
+          </p>
+        )}
+        {!result && answered && (
+          <p>
+            <b>Sorry, your answer was incorrect.</b>
+          </p>
+        )}
       </div>
     </div>
   );

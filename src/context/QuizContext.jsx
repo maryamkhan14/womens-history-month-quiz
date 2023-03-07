@@ -6,6 +6,8 @@ export const quizReducer = (state, action) => {
       return { ...state, quizActive: action.payload };
     case "SET_ANSWERED_CORRECTLY":
       return { ...state, answeredCorrectly: action.payload };
+    case "SET_QUIZ_SCORE":
+      return { ...state, quizScore: action.payload };
     case "SET_CARD_SET":
       return { ...state, cardSet: action.payload };
     case "SET_QUIZ_CATEGORY":
@@ -30,6 +32,7 @@ export const QuizContextProvider = ({ children }) => {
     cardSet: {},
     quizActive: false,
     answeredCorrectly: 0,
+    quizScore: 0,
     quizCategory: "",
     quizSize: 5,
   });

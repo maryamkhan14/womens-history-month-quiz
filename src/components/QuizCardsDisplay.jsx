@@ -1,10 +1,11 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import QuizCard from "./QuizCard";
 import { QuizContext } from "../context/QuizContext";
 import QuizInfo from "./QuizInfo";
 const QuizCardsDisplay = ({ cards }) => {
-  const { dispatch } = useContext(QuizContext);
+  const { answeredCorrectly, dispatch } = useContext(QuizContext);
+  const [score, setScore] = useState(0);
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickPrevious = () => {
@@ -23,6 +24,13 @@ const QuizCardsDisplay = ({ cards }) => {
       payload: false,
     });
   };
+  useEffect(() => {
+    console.log("changed");
+    dispatch({
+      type: "SET_QUIZ_SCORE",
+      payload: Math.round((answeredCorrectly / cards.length) * 100),
+    });
+  }, [answeredCorrectly]);
   return (
     <div className="quiz-form-container cards-display">
       <QuizCard key={cards[cardIndex].id} card={cards[cardIndex]} />
@@ -39,7 +47,7 @@ const QuizCardsDisplay = ({ cards }) => {
           </button>
           <button onClick={handleClickRestart}>Create New Quiz</button>
         </div>
-        <QuizInfo length={cards.length} />
+        <QuizInfo />
       </div>
     </div>
   );
