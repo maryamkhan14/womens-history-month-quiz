@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
-export const QuizContext = createContext();
-export const quizReducer = (state, action) => {
+export const QuizCompletionContext = createContext();
+export const quizCompletionReducer = (state, action) => {
   switch (action.type) {
     case "SWITCH_QUIZ_ACTIVE":
       return { ...state, quizActive: action.payload };
@@ -27,8 +27,8 @@ export const quizReducer = (state, action) => {
   }
 };
 
-export const QuizContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(quizReducer, {
+export const QuizCompletionContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(quizCompletionReducer, {
     cardSet: {},
     quizActive: false,
     answeredCorrectly: 0,
@@ -37,8 +37,8 @@ export const QuizContextProvider = ({ children }) => {
     quizSize: 5,
   });
   return (
-    <QuizContext.Provider value={{ ...state, dispatch }}>
+    <QuizCompletionContext.Provider value={{ ...state, dispatch }}>
       {children}
-    </QuizContext.Provider>
+    </QuizCompletionContext.Provider>
   );
 };

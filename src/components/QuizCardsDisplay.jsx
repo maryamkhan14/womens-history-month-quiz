@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
 import QuizCard from "./QuizCard";
-import { QuizContext } from "../context/QuizContext";
+import { QuizCompletionContext } from "../context/QuizCompletionContext";
 import QuizInfo from "./QuizInfo";
 const QuizCardsDisplay = ({ cards }) => {
-  const { answeredCorrectly, dispatch } = useContext(QuizContext);
+  const { answeredCorrectly, dispatch } = useContext(QuizCompletionContext);
   const [score, setScore] = useState(0);
   const [cardIndex, setCardIndex] = useState(0);
 

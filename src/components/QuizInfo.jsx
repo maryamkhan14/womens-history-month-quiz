@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
-import { QuizContext } from "../context/QuizContext";
+import { QuizCompletionContext } from "../context/QuizCompletionContext";
 const QuizInfo = () => {
-  const { quizScore, quizCategory } = useContext(QuizContext);
+  const { quizScore, quizCategory } = useContext(QuizCompletionContext);
   const [displayCategory, setDisplayCategory] = useState("");
 
   const setCategory = () => {

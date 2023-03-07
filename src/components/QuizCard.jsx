@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { QuizContext } from "../context/QuizContext";
+import { QuizCompletionContext } from "../context/QuizCompletionContext";
 
 const QuizCard = ({ card }) => {
-  const { answeredCorrectly, dispatch } = useContext(QuizContext);
+  const { answeredCorrectly, dispatch } = useContext(QuizCompletionContext);
   const [answered, setAnswered] = useState(false);
   const [result, setResult] = useState();
   const handleSelect = (id) => {
@@ -39,7 +39,10 @@ const QuizCard = ({ card }) => {
       )}
       {!result && answered && (
         <p className="result-incorrect">
-          <b>Sorry, your answer was incorrect.</b>
+          <b>
+            Sorry, your answer was incorrect. The correct answer is "
+            {card.correctOption.text}".
+          </b>
         </p>
       )}
     </div>

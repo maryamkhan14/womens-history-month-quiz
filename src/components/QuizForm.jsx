@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useContext } from "react";
-import { QuizContext } from "../context/QuizContext";
+import { QuizCompletionContext } from "../context/QuizCompletionContext";
 import {
   generateIconsSet,
   generateFirstsSet,
@@ -11,7 +11,9 @@ import QuizCategorySelector from "./QuizCategorySelector";
 import QuizSizeInput from "./QuizSizeInput";
 
 const QuizForm = () => {
-  const { quizCategory, quizSize, dispatch } = useContext(QuizContext);
+  const { quizCategory, quizSize, dispatch } = useContext(
+    QuizCompletionContext
+  );
   const handleSubmit = (e) => {
     e.preventDefault();
     switch (quizCategory) {
