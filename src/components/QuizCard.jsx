@@ -17,35 +17,31 @@ const QuizCard = ({ card }) => {
     }
   };
   return (
-    <div>
-      <div className="intro">
-        <h1>{card.header}</h1>
-        <form className="card-options">
-          {card.options.map((option) => (
-            <div key={option.id}>
-              <input
-                type="radio"
-                id={option.id}
-                name={card.id}
-                value={option.id}
-                disabled={answered}
-                onClick={() => handleSelect(option.id)}
-              />
-              <label htmlFor={option.id}>{option.text}</label>
-            </div>
-          ))}
-        </form>
-        {result == true && (
-          <p>
-            <b>Good job! Your answer was correct.</b>
-          </p>
-        )}
-        {!result && answered && (
-          <p>
-            <b>Sorry, your answer was incorrect.</b>
-          </p>
-        )}
-      </div>
+    <div className="question-card">
+      <h1>{card.header}</h1>
+      <form className="card-options">
+        {card.options.map((option) => (
+          <div key={option.id}>
+            <input
+              type="radio"
+              id={option.id}
+              name={card.id}
+              value={option.id}
+              disabled={answered}
+              onClick={() => handleSelect(option.id)}
+            />
+            <label htmlFor={option.id}>{option.text}</label>
+          </div>
+        ))}
+      </form>
+      {result == true && (
+        <p className="result-correct">Good job! Your answer was correct.</p>
+      )}
+      {!result && answered && (
+        <p className="result-incorrect">
+          <b>Sorry, your answer was incorrect.</b>
+        </p>
+      )}
     </div>
   );
 };

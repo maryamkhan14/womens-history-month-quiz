@@ -33,6 +33,7 @@ const QuizCardsDisplay = ({ cards }) => {
   }, [answeredCorrectly]);
   return (
     <div className="quiz-form-container cards-display">
+      <QuizInfo />
       <QuizCard key={cards[cardIndex].id} card={cards[cardIndex]} />
       <div className="buttons-info-panel">
         <div className="buttons">
@@ -47,7 +48,6 @@ const QuizCardsDisplay = ({ cards }) => {
           </button>
           <button onClick={handleClickRestart}>Create New Quiz</button>
         </div>
-        <QuizInfo />
       </div>
     </div>
   );
