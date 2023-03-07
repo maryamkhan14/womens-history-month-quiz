@@ -37,6 +37,10 @@ const QuizForm = () => {
         });
       default:
         dispatch({
+          type: "SET_QUIZ_CATEGORY",
+          payload: "firsts",
+        });
+        dispatch({
           type: "SET_CARD_SET",
           payload: generateFirstsSet(quizSize),
         });
@@ -56,8 +60,8 @@ const QuizForm = () => {
         </p>
       </div>
       <div className="selects">
-        <QuizCategorySelector />
         <QuizSizeInput />
+        <QuizCategorySelector />
       </div>
       <button type="submit" onClick={(e) => handleSubmit(e)}>
         Let's go!
