@@ -1,12 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { QuizContext } from "../context/QuizContext";
+
 const QuizCard = ({ card }) => {
+  const { answeredCorrectly, dispatch } = useContext(QuizContext);
   const [answered, setAnswered] = useState(false);
   const handleSelect = (id) => {
     setAnswered(true);
     if (id == card.correctOption.id) {
-    } else {
-      console.log("wrong");
+      dispatch({
+        type: "SET_ANSWERED_CORRECTLY",
+        payload: answeredCorrectly + 1,
+      });
     }
   };
   return (
@@ -15,10 +20,9 @@ const QuizCard = ({ card }) => {
         <h1>{card.header}</h1>
         <form className="card-options">
           {card.options.map((option) => (
-            <div>
+            <div key={option.id}>
               <input
                 type="radio"
-                key={option.id}
                 id={option.id}
                 name={card.id}
                 value={option.id}

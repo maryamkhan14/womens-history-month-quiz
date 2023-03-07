@@ -2,6 +2,7 @@
   display: flex;
   flex: 1 1 100%;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -28,15 +29,18 @@
   max-width: 100%;
   margin: 10px;
 }
+
 .selects {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
 }
+
 .selects p {
   font-weight: 500;
 }
+
 .category-select {
   display: flex;
   align-items: center;
