@@ -2,8 +2,10 @@ import React from "react";
 import { useState, useContext } from "react";
 import QuizCard from "./QuizCard";
 import { QuizContext } from "../context/QuizContext";
+import QuizInfo from "./QuizInfo";
 const QuizCardsDisplay = ({ cards }) => {
-  const { quizCategory, dispatch } = useContext(QuizContext);
+  console.log("render");
+  const { dispatch } = useContext(QuizContext);
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickPrevious = () => {
@@ -37,11 +39,7 @@ const QuizCardsDisplay = ({ cards }) => {
           </button>
           <button onClick={handleClickRestart}>Done</button>
         </div>
-        <div className="info">
-          <p>Number of cards in this quiz: {cards.length + 1}</p>
-
-          <p>Category: {quizCategory}</p>
-        </div>
+        <QuizInfo length={cards.length} />
       </div>
     </div>
   );

@@ -20,21 +20,25 @@ const QuizForm = () => {
           type: "SET_CARD_SET",
           payload: generateMiscSet(quizSize),
         });
+        break;
       case "firsts":
         dispatch({
           type: "SET_CARD_SET",
           payload: generateFirstsSet(quizSize),
         });
+        break;
       case "icons":
         dispatch({
           type: "SET_CARD_SET",
           payload: generateIconsSet(quizSize),
         });
+        break;
       case "quotes":
         dispatch({
           type: "SET_CARD_SET",
           payload: generateQuotesSet(quizSize),
         });
+        break;
       default:
         dispatch({
           type: "SET_QUIZ_CATEGORY",
