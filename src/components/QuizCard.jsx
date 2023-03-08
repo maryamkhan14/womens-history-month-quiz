@@ -6,12 +6,9 @@ const QuizCard = ({ card }) => {
   const { allAnswered, correctAnswerCount, dispatch } = useContext(
     QuizCompletionContext
   );
-
-  // tells whether current question has been answered already
-  const answered = Object.keys(allAnswered).includes(card.id);
   // captures result entered by user
   const [result, setResult] = useState(null);
-
+  const answered = allAnswered[card.id] != undefined;
   const handleSelect = (id) => {
     if (id == card.correctOption.id) {
       setResult(true);
@@ -24,7 +21,7 @@ const QuizCard = ({ card }) => {
     result != null &&
       dispatch({
         type: "UPDATE_ALL_ANSWERED",
-        payload: { id: card.id, result: result },
+        payload: { [card.id]: result },
       });
     result == true &&
       dispatch({
@@ -51,12 +48,12 @@ const QuizCard = ({ card }) => {
           </div>
         ))}
       </form>
-      {allAnswered[card.id] == true && (
+      {allAnswered[card.id] === true && (
         <p className="result-correct">
           Good job! Your answer, {card.correctOption.text}, was correct.
         </p>
       )}
-      {allAnswered[card.id] == false && (
+      {allAnswered[card.id] === false && (
         <p className="result-incorrect">
           Sorry, your answer was incorrect. The correct answer is "
           {card.correctOption.text}".

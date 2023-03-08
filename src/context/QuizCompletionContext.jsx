@@ -13,8 +13,10 @@ export const quizCompletionReducer = (state, action) => {
         allAnswered: {},
       };
     case "UPDATE_ALL_ANSWERED":
-      state.allAnswered[action.payload.id] = action.payload.result;
-      return { ...state, allAnswered: state.allAnswered };
+      return {
+        ...state,
+        allAnswered: { ...state.allAnswered, ...action.payload },
+      };
     default:
       return state;
   }
