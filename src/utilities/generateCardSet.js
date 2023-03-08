@@ -1,6 +1,12 @@
 import { cardPool } from "./cardPool";
-const generateRandomSet = (source, size, category) => {
+const generateRandomSet = (size, category) => {
   let miscSet = { category: category, size: size, cards: [] };
+  let source;
+  if (category == "misc") {
+    source = [...cardPool.icons, ...cardPool.firsts, ...cardPool.quotes];
+  } else {
+    source = cardPool[category];
+  }
   let previouslyUsed = [];
   for (let i = 0; i < size; i++) {
     // generate random value
@@ -16,27 +22,4 @@ const generateRandomSet = (source, size, category) => {
   }
   return miscSet;
 };
-//TODO: Refactor generate${category}Set into one function
-const generateMiscSet = (size) => {
-  let allCards = [...cardPool.icons, ...cardPool.firsts, ...cardPool.quotes];
-  return generateRandomSet(allCards, size, "misc");
-};
-
-const generateIconsSet = (size) => {
-  return generateRandomSet(cardPool.icons, size, "icons");
-};
-
-const generateFirstsSet = (size) => {
-  return generateRandomSet(cardPool.firsts, size, "firsts");
-};
-
-const generateQuotesSet = (size) => {
-  return generateRandomSet(cardPool.quotes, size, "quotes");
-};
-
-export {
-  generateFirstsSet,
-  generateIconsSet,
-  generateMiscSet,
-  generateQuotesSet,
-};
+export { generateRandomSet };

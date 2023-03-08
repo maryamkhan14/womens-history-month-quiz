@@ -1,56 +1,21 @@
 import React from "react";
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { QuizContext } from "../context/QuizContext";
-import {
-  QuizCreationContext,
-  QuizCreationContextProvider,
-} from "../context/QuizCreationContext";
-import {
-  generateIconsSet,
-  generateFirstsSet,
-  generateQuotesSet,
-  generateMiscSet,
-} from "../utilities/generateCardSet";
+import { QuizCreationContext } from "../context/QuizCreationContext";
+import { generateRandomSet } from "../utilities/generateCardSet";
 import QuizCategorySelector from "./QuizCategorySelector";
 import QuizSizeInput from "./QuizSizeInput";
 
 const QuizForm = () => {
   const { dispatch } = useContext(QuizContext);
-  const { quizCategory, quizSize } = useContext(QuizCreationContext);
+  const { quizSize, quizCategory } = useContext(QuizCreationContext);
+
   const handleSubmit = (e) => {
-    console.log(quizCategory);
     e.preventDefault();
-    switch (quizCategory) {
-      case "misc":
-        dispatch({
-          type: "SET_CARD_SET",
-          payload: generateMiscSet(quizSize),
-        });
-        break;
-      case "firsts":
-        dispatch({
-          type: "SET_CARD_SET",
-          payload: generateFirstsSet(quizSize),
-        });
-        break;
-      case "icons":
-        dispatch({
-          type: "SET_CARD_SET",
-          payload: generateIconsSet(quizSize),
-        });
-        break;
-      case "quotes":
-        dispatch({
-          type: "SET_CARD_SET",
-          payload: generateQuotesSet(quizSize),
-        });
-        break;
-      default:
-        dispatch({
-          type: "SET_CARD_SET",
-          payload: generateFirstsSet(quizSize),
-        });
-    }
+    dispatch({
+      type: "SET_CARD_SET",
+      payload: generateRandomSet(quizSize, quizCategory),
+    });
     dispatch({
       type: "SWITCH_QUIZ_ACTIVE",
       payload: true,
