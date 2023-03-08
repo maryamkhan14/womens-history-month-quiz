@@ -18,7 +18,6 @@ export const quizReducer = (state, action) => {
 export const QuizContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(quizReducer, {
     quizActive: false,
-
     cardSet: {},
   });
   return (
