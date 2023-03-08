@@ -4,11 +4,15 @@ import QuizCard from "./QuizCard";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
 import QuizInfo from "./QuizInfo";
 import { QuizContext } from "../context/QuizContext";
+import QuizResult from "./QuizResult";
 const QuizCardsDisplay = ({ cards }) => {
   const { dispatch: quizDispatch } = useContext(QuizContext);
-  const { correctAnswerCount, dispatch: quizCompletionDispatch } = useContext(
-    QuizCompletionContext
-  );
+  const {
+    allAnswered,
+    correctAnswerCount,
+    dispatch: quizCompletionDispatch,
+  } = useContext(QuizCompletionContext);
+
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleClickPrevious = () => {
@@ -28,16 +32,27 @@ const QuizCardsDisplay = ({ cards }) => {
       payload: null,
     });
   };
+
   useEffect(() => {
     quizCompletionDispatch({
       type: "SET_QUIZ_SCORE",
       payload: Math.round((correctAnswerCount / cards.length) * 100),
     });
   }, [correctAnswerCount]);
+
   return (
     <div className="quiz-form-container cards-display">
       <QuizInfo />
-      <QuizCard key={cards[cardIndex].id} card={cards[cardIndex]} />
+      {!allAnswered.hasOwnProperty(cards[cardIndex].id) && (
+        <QuizCard card={cards[cardIndex]} />
+      )}
+      {allAnswered.hasOwnProperty(cards[cardIndex].id) && (
+        <QuizResult
+          result={allAnswered[cards[cardIndex].id]}
+          card={cards[cardIndex]}
+        />
+      )}
+
       <div className="buttons-info-panel">
         <div className="buttons">
           <button onClick={handleClickPrevious} disabled={cardIndex == 0}>
