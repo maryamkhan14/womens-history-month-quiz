@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
 import { QuizContext } from "../context/QuizContext";
 const QuizInfo = () => {
+  const { allAnswered } = useContext(QuizCompletionContext);
   const { cardSet } = useContext(QuizContext);
   const { category: quizCategory } = cardSet;
   const [displayCategory, setDisplayCategory] = useState("");
@@ -28,11 +29,15 @@ const QuizInfo = () => {
   useEffect(() => {
     setCategory();
   }, [quizCategory]);
-
   return (
     <div className="quiz-info">
       <p>Category: {displayCategory}</p>
-      <p>Score: {quizScore}%</p>
+      <div className="score-completion-info">
+        <p>Score: {quizScore}%</p>
+        <p>
+          {Object.keys(allAnswered).length == cardSet.size && <b> All done!</b>}
+        </p>
+      </div>
     </div>
   );
 };
