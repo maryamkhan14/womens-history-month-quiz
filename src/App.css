@@ -22,7 +22,7 @@
   min-height: 75%;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: #f9f9f9;
+  background-color: rgb(255, 255, 255, 0.9);
 }
 
 .intro {
@@ -32,12 +32,13 @@
   max-width: 100%;
   margin: 10px;
 }
-/** TODO: Add flex-wrap **/
+
 .selects {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
+  margin: 10px;
 }
 
 .selects p {
@@ -46,6 +47,7 @@
 
 .category-select {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 25px;
   align-items: center;
@@ -58,6 +60,8 @@
 
 .size-input {
   display: flex;
+
+  flex-wrap: wrap;
   align-items: center;
   flex: 1 1 80%;
   margin-bottom: 25px;
@@ -115,5 +119,14 @@
 }
 
 .answered > .card-options {
-  color: #e0e0e0;
+  color: #b1b1b1;
+}
+
+.score-completion-info {
+  display: flex;
+  align-items: center;
+}
+
+.score-completion-info p {
+  margin-left: 10px;
 }
