@@ -20,14 +20,14 @@ export const cardPool = {
           id: 2,
         },
         {
-          text: "Rosalind Franklin",
+          text: "Golda Meir",
           correct: false,
           id: 3,
         },
       ],
       correctOption: {
         text: "Marie Curie",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Marie_Curie",
         id: 0,
       },
     },
@@ -59,7 +59,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Sirimavo Bandaranaike",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Sirimavo_Bandaranaike",
         id: 3,
       },
     },
@@ -91,7 +91,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Amelia Earhart",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Amelia_Earhart",
         id: 2,
       },
     },
@@ -123,7 +123,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Sandra Day O'Connor",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Sandra_Day_O%27Connor",
         id: 0,
       },
     },
@@ -154,7 +154,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Junko Tabei",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Junko_Tabei",
         id: 0,
       },
     },
@@ -186,7 +186,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Kathryn Bigelow",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Kathryn_Bigelow",
         id: 0,
       },
     },
@@ -218,7 +218,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Margaret Thatcher",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Margaret_Thatcher",
         id: 1,
       },
     },
@@ -250,7 +250,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Selma Lagerlof",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Selma_Lagerl%C3%B6f",
         id: 3,
       },
     },
@@ -282,7 +282,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Angela Merkel",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Angela_Merkel",
         id: 2,
       },
     },
@@ -314,7 +314,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Charlotte Cooper",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Charlotte_Cooper_(tennis)",
         id: 3,
       },
     },
@@ -346,7 +346,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Gwendolyn Brooks",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Gwendolyn_Brooks",
         id: 3,
       },
     },
@@ -378,7 +378,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Gertrude Ederle",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Gertrude_Ederle",
         id: 0,
       },
     },
@@ -410,7 +410,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Kamala Harris",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Kamala_Harris",
         id: 3,
       },
     },
@@ -442,7 +442,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Nellie Bly",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Nellie_Bly",
         id: 1,
       },
     },
@@ -474,7 +474,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Rosalind Franklin",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Rosalind_Franklin",
         id: 3,
       },
     },
@@ -506,7 +506,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Charlotte Cooper",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Charlotte_Cooper_(tennis)",
         id: 3,
       },
     },
@@ -538,7 +538,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Eleanor Roosevelt",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Eleanor_Roosevelt",
         id: 0,
       },
     },
@@ -570,7 +570,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Shirley Hufstedler",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Shirley_Hufstedler",
         id: 2,
       },
     },
@@ -602,7 +602,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Madeleine Albright",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Madeleine_Albright",
         id: 3,
       },
     },
@@ -634,7 +634,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Nadia Comaneci",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Nadia_Com%C4%83neci",
         id: 0,
       },
     },
@@ -665,7 +665,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Jane Addams",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Jane_Addams",
         id: 1,
       },
     },
@@ -696,7 +696,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Valentina Tereshkova",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Valentina_Tereshkova",
         id: 1,
       },
     },
@@ -728,7 +728,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Janet Gaynor",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Janet_Gaynor",
         id: 0,
       },
     },
@@ -760,7 +760,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Margaret Thatcher",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Margaret_Thatcher",
         id: 1,
       },
     },
@@ -792,7 +792,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Marie Curie",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Marie_Curie",
         id: 0,
       },
     },
@@ -824,7 +824,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Barbara Bel Geddes",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Barbara_Bel_Geddes",
         id: 2,
       },
     },
@@ -856,7 +856,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Kim Campbell",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Kim_Campbell",
         id: 0,
       },
     },
@@ -888,7 +888,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Dorothy Crowfoot Hodgkin",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Dorothy_Hodgkin",
         id: 1,
       },
     },
@@ -919,7 +919,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Isabel Peron",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Isabel_Per%C3%B3n",
         id: 0,
       },
     },
@@ -951,7 +951,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Alice Coachman",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Alice_Coachman",
         id: 1,
       },
     },
@@ -985,7 +985,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Helen Keller",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Helen_Keller",
         id: 2,
       },
     },
@@ -1017,7 +1017,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Rosa Parks",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Rosa_Parks",
         id: 1,
       },
     },
@@ -1049,7 +1049,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Oprah Winfrey",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Oprah_Winfrey",
         id: 2,
       },
     },
@@ -1081,7 +1081,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Mother Teresa",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Mother_Teresa",
         id: 1,
       },
     },
@@ -1113,7 +1113,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Ruth Bader Ginsburg",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Ruth_Bader_Ginsburg",
         id: 2,
       },
     },
@@ -1145,7 +1145,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Dolly Parton",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Dolly_Parton",
         id: 0,
       },
     },
@@ -1177,7 +1177,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Louisa May Alcott",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Louisa_May_Alcott",
         id: 2,
       },
     },
@@ -1209,7 +1209,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Audre Lord",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Audre_Lorde",
         id: 3,
       },
     },
@@ -1241,7 +1241,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Michelle Obama",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Michelle_Obama",
         id: 0,
       },
     },
@@ -1272,7 +1272,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Amelia Earhart",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Amelia_Earhart",
         id: 0,
       },
     },
@@ -1304,7 +1304,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Elizabeth Taylor",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Elizabeth_Taylor",
         id: 3,
       },
     },
@@ -1336,7 +1336,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Gertrude Ederle",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Gertrude_Ederle",
         id: 0,
       },
     },
@@ -1368,7 +1368,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Viola Davis",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Viola_Davis",
         id: 1,
       },
     },
@@ -1400,7 +1400,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Nellie Bly",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Nellie_Bly",
         id: 1,
       },
     },
@@ -1431,7 +1431,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Emmeline Pankhurst",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Emmeline_Pankhurst",
         id: 2,
       },
     },
@@ -1463,14 +1463,14 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Beyoncé",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
         id: 3,
       },
     },
     {
       id: "17Q",
       header:
-        "'What makes you different or weird—that’s your strength.' Who said this?",
+        "'What makes you different or weird—that's your strength.' Who said this?",
       options: [
         {
           text: "Oprah Winfrey",
@@ -1495,7 +1495,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Taylor Swift",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Taylor_Swift",
         id: 1,
       },
     },
@@ -1527,7 +1527,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Jane Goodall",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Jane_Goodall",
         id: 2,
       },
     },
@@ -1559,7 +1559,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Dolly Parton",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Dolly_Parton",
         id: 1,
       },
     },
@@ -1591,7 +1591,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Eleanor Roosevelt",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Eleanor_Roosevelt",
         id: 1,
       },
     },
@@ -1623,7 +1623,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Helen Keller",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Helen_Keller",
         id: 1,
       },
     },
@@ -1655,7 +1655,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Diane von Furstenberg",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Diane_von_F%C3%BCrstenberg",
         id: 0,
       },
     },
@@ -1687,7 +1687,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Madeleine Albright",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Madeleine_Albright",
         id: 2,
       },
     },
@@ -1719,7 +1719,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Gloria Steinem",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Gloria_Steinem",
         id: 0,
       },
     },
@@ -1751,7 +1751,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Oprah Winfrey",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Oprah_Winfrey",
         id: 3,
       },
     },
@@ -1783,7 +1783,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Malala Yousafzai",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Malala_Yousafzai",
         id: 0,
       },
     },
@@ -1815,7 +1815,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Serena Williams",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Serena_Williams",
         id: 3,
       },
     },
@@ -1847,7 +1847,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Eleanor Roosevelt",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Eleanor_Roosevelt",
         id: 0,
       },
     },
@@ -1879,7 +1879,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Ruth Bader Ginsburg",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Ruth_Bader_Ginsburg",
         id: 3,
       },
     },
@@ -1911,7 +1911,7 @@ export const cardPool = {
       ],
       correctOption: {
         text: "Virginia Woolf",
-        correct: true,
+        link: "https://en.wikipedia.org/wiki/Virginia_Woolf",
         id: 1,
       },
     },
