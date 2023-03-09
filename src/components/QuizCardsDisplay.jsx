@@ -26,7 +26,7 @@ const QuizCardsDisplay = ({ cards }) => {
     }
   };
   const handleClickRestart = () => {
-    quizDispatch({ type: "RESET_QUIZ_SCORE", payload: null });
+    quizDispatch({ type: "RESET_QUIZ", payload: null });
     quizCompletionDispatch({
       type: "RESET_QUIZ",
       payload: null,
