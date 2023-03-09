@@ -9,6 +9,7 @@ export const quizReducer = (state, action) => {
     case "RESET_QUIZ":
       return {
         cardSet: {},
+        quizActive: false,
       };
     default:
       return state;
