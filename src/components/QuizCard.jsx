@@ -6,13 +6,18 @@ const QuizCard = ({ card }) => {
   const { allAnswered, correctAnswerCount, dispatch } = useContext(
     QuizCompletionContext
   );
-  // captures result entered by user
+  const [answerGiven, setAnswerGiven] = useState(null);
+  // captures result of user entry
   const [result, setResult] = useState(null);
+
   const answered = allAnswered.hasOwnProperty(card.id);
-  const handleSelect = (id) => {
-    if (id == card.correctOption.id) {
+
+  const handleSelect = (option) => {
+    if (option.id == card.correctOption.id) {
+      setAnswerGiven(option.text);
       setResult(true);
     } else {
+      setAnswerGiven(option.text);
       setResult(false);
     }
   };
@@ -21,7 +26,7 @@ const QuizCard = ({ card }) => {
     if (result != null) {
       dispatch({
         type: "UPDATE_ALL_ANSWERED",
-        payload: { [card.id]: result },
+        payload: { [card.id]: { result: result, answerGiven: answerGiven } },
       });
     }
     if (result == true) {
@@ -33,25 +38,23 @@ const QuizCard = ({ card }) => {
   }, [result]);
 
   return (
-    <div className={`question-card ${answered && "answered"}`}>
+    <div className={`quiz-card ${answered && "answered"}`}>
       <h1>{card.header}</h1>
-      {!answered && (
-        <form className="card-options">
-          {card.options.map((option) => (
-            <div key={option.id}>
-              <input
-                type="radio"
-                id={option.id}
-                name={card.id}
-                value={option.id}
-                disabled={answered}
-                onClick={() => handleSelect(option.id)}
-              />
-              <label htmlFor={option.id}>{option.text}</label>
-            </div>
-          ))}
-        </form>
-      )}
+      <form className="card-options">
+        {card.options.map((option) => (
+          <div key={option.id}>
+            <input
+              type="radio"
+              id={option.id}
+              name={card.id}
+              value={option.id}
+              disabled={answered}
+              onClick={() => handleSelect(option)}
+            />
+            <label htmlFor={option.id}>{option.text}</label>
+          </div>
+        ))}
+      </form>
     </div>
   );
 };

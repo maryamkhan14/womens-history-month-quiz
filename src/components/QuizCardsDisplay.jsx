@@ -7,6 +7,7 @@ import { QuizContext } from "../context/QuizContext";
 import QuizResult from "./QuizResult";
 const QuizCardsDisplay = ({ cards }) => {
   const { dispatch: quizDispatch } = useContext(QuizContext);
+  const [side, setSide] = useState("front");
   const {
     allAnswered,
     correctAnswerCount,
@@ -14,17 +15,35 @@ const QuizCardsDisplay = ({ cards }) => {
   } = useContext(QuizCompletionContext);
 
   const [cardIndex, setCardIndex] = useState(0);
+  const handleCardClick = () => {
+    if (allAnswered.hasOwnProperty(cards[cardIndex].id)) {
+      if (side == "front") {
+        setSide("back");
+      } else {
+        setSide("front");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (allAnswered.hasOwnProperty(cards[cardIndex].id)) {
+      setSide("back");
+    }
+  }, [allAnswered]);
 
   const handleClickPrevious = () => {
+    setSide("front");
     if (cardIndex > 0) {
       setCardIndex(cardIndex - 1);
     }
   };
   const handleClickNext = () => {
+    setSide("front");
     if (cardIndex < cards.length - 1) {
       setCardIndex(cardIndex + 1);
     }
   };
+
   const handleClickRestart = () => {
     quizDispatch({ type: "RESET_QUIZ", payload: null });
     quizCompletionDispatch({
@@ -41,18 +60,23 @@ const QuizCardsDisplay = ({ cards }) => {
   }, [correctAnswerCount]);
 
   return (
-    <div className="quiz-form-container cards-display">
+    <div className="quiz-form-container">
       <QuizInfo />
-      {!allAnswered.hasOwnProperty(cards[cardIndex].id) && (
-        <QuizCard card={cards[cardIndex]} />
-      )}
-      {allAnswered.hasOwnProperty(cards[cardIndex].id) && (
-        <QuizResult
-          result={allAnswered[cards[cardIndex].id]}
-          card={cards[cardIndex]}
-        />
-      )}
+      <div className="cards-display" onClick={handleCardClick}>
+        {side == "front" && <QuizCard card={cards[cardIndex]} />}
+        {side == "back" && (
+          <QuizResult
+            result={allAnswered[cards[cardIndex].id].result}
+            card={cards[cardIndex]}
+            answerGiven={allAnswered[cards[cardIndex].id].answerGiven}
+          />
+        )}
+      </div>
 
+      <p>
+        Tip: After answering, you can click anywhere on the card to show you the
+        front and back of the card!
+      </p>
       <div className="buttons-info-panel">
         <div className="buttons">
           <button onClick={handleClickPrevious} disabled={cardIndex == 0}>
