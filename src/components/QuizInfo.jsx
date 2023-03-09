@@ -22,15 +22,16 @@ const QuizInfo = () => {
         setDisplayCategory("Quotes");
         break;
       case "misc":
-        setDisplayCategory("Miscellaneous");
+        setDisplayCategory("Random");
         break;
     }
   };
+
   useEffect(() => {
     setCategory();
   }, [quizCategory]);
   return (
-    <div className="quiz-info">
+    <div className={`quiz-info quiz-info-${quizCategory}`}>
       <p>Category: {displayCategory}</p>
       <div className="score-completion-info">
         <p>Score: {quizScore}%</p>
