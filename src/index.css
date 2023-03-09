@@ -1,7 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Golos Text, Avenir, system-ui, Helvetica, Arial, sans-serif;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -10,12 +9,13 @@
 }
 h1 {
   font-size: 2.5em;
+  line-height: 1.3em;
 }
 
 select,
 input {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #e0e0e0;
+  background-color: #ffb6c1;
   border-width: 0 0 1px 0;
   border-radius: 0;
   border-style: solid;
@@ -51,7 +51,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #e0e0e0;
+  background-color: #ffb6c1;
   cursor: pointer;
   transition: border-color 0.25s;
 }
