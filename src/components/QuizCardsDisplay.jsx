@@ -74,8 +74,8 @@ const QuizCardsDisplay = ({ cards }) => {
       </div>
 
       <p>
-        Tip: After answering, you can click anywhere on the card to show you the
-        front and back of the card!
+        Tip: After answering, simply click anywhere in the question area to
+        switch between the question and its answer!
       </p>
       <div className="buttons-info-panel">
         <div className="buttons">
