@@ -22,7 +22,7 @@
   min-height: 75%;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255, 0.85);
 }
 
 .intro {
@@ -90,6 +90,12 @@
 .card-options div {
   margin: 0.5rem;
 }
+.quiz-result {
+  min-height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
 .result-correct {
   background-color: lightgreen;
@@ -129,4 +135,19 @@
 
 .score-completion-info p {
   margin-left: 10px;
+}
+
+.quiz-info-firsts {
+  background-color: #ad1457;
+  color: #fff;
+}
+
+.quiz-info-icons {
+  background-color: #d4af37;
+  color: black;
+}
+
+.quiz-info-quotes {
+  background-color: #00ced1;
+  color: black;
 }
