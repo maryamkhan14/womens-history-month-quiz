@@ -1,41 +1,43 @@
 import React from "react";
 import { useEffect, useContext, useState } from "react";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
-
+import QuizGuessInput from "./QuizGuessInput";
 const QuizCard = ({ card }) => {
   const { allAnswered, correctAnswerCount, dispatch } = useContext(
     QuizCompletionContext
   );
   const [answerGiven, setAnswerGiven] = useState(null);
   // captures result of user entry
-  const [result, setResult] = useState(null);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
   const answered = allAnswered.hasOwnProperty(card.id);
 
   const handleSelect = (option) => {
     if (option.id == card.correctOption.id) {
       setAnswerGiven(option.text);
-      setResult(true);
+      setIsAnswerCorrect(true);
     } else {
       setAnswerGiven(option.text);
-      setResult(false);
+      setIsAnswerCorrect(false);
     }
   };
 
   useEffect(() => {
-    if (result != null) {
+    if (isAnswerCorrect != null) {
       dispatch({
         type: "UPDATE_ALL_ANSWERED",
-        payload: { [card.id]: { result: result, answerGiven: answerGiven } },
+        payload: {
+          [card.id]: { result: isAnswerCorrect, answerGiven: answerGiven },
+        },
       });
     }
-    if (result == true) {
+    if (isAnswerCorrect == true) {
       dispatch({
         type: "SET_CORRECT_ANSWER_COUNT",
         payload: correctAnswerCount + 1,
       });
     }
-  }, [result]);
+  }, [isAnswerCorrect]);
 
   return (
     <div className={`quiz-card ${answered && "answered"}`}>
@@ -55,6 +57,8 @@ const QuizCard = ({ card }) => {
           </div>
         ))}
       </form>
+
+      <QuizGuessInput card={card} />
     </div>
   );
 };

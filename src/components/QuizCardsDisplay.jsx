@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
-import QuizCard from "./QuizCard";
 import { QuizCompletionContext } from "../context/QuizCompletionContext";
-import QuizInfo from "./QuizInfo";
 import { QuizContext } from "../context/QuizContext";
+import QuizCard from "./QuizCard";
+import QuizInfo from "./QuizInfo";
 import QuizResult from "./QuizResult";
+
 const QuizCardsDisplay = ({ cards }) => {
   const { dispatch: quizDispatch } = useContext(QuizContext);
   const [side, setSide] = useState("front");

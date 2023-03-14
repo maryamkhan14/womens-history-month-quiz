@@ -172,3 +172,23 @@
   text-align: center;
   padding: 1rem;
 }
+
+.quiz-guess {
+  display: flex;
+  margin-top: 3em;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.quiz-guess label {
+  text-align: left;
+  margin-right: 1.5em;
+}
+.quiz-guess .input-area {
+  display: flex;
+}
+.quiz-guess .input-area > input {
+  margin-right: 1.5em;
+  width: 75%;
+  background-color: #e0e0e0;
+}
