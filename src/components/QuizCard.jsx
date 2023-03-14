@@ -58,7 +58,10 @@ const QuizCard = ({ card }) => {
         ))}
       </form>
 
-      <QuizGuessInput card={card} />
+      <QuizGuessInput
+        correctAnswer={card.correctOption.text}
+        answered={answered}
+      />
     </div>
   );
 };

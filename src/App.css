@@ -180,18 +180,38 @@
   align-items: center;
   width: 100%;
 }
+
 .quiz-guess label {
   text-align: left;
   margin-right: 1.5em;
   font-weight: 500;
 }
+
 .quiz-guess .input-area {
   display: flex;
   width: 75%;
 }
-.quiz-guess .input-area > input {
+
+.input-area > input {
   margin-right: 1.5em;
   width: 100%;
   height: 50%;
+  background-color: lightpink;
+}
+
+.input-area .correct-guess {
+  border: 3px solid lightgreen;
+}
+
+.input-area .incorrect-guess {
+  border: 3px solid red;
+}
+
+.quiz-guess.answered > .input-area > input,
+button {
   background-color: #e0e0e0;
+}
+
+.quiz-guess.answered > label {
+  color: #e0e0e0;
 }
